@@ -24,6 +24,9 @@ $date_now = $parsed_json ->{"response"}->{"features"}->{"date"};
 // permet de savoir quel est l'utilisateur courant
 $user_now = $parsed_json ->{"jardin_co"}->{"utilisateur"}->{"idUtilisateus"};
 
+// on récupère le login de l'utilisateur
+$user_login = $parsed_json ->{"jardin_co"}->{"utilisateur"}->{"login"};
+
 // on récupère le mail si il y a besoin d'envoyer un mail pour le niveau d'eau.
 $user_mail = $parsed_json ->{"jardin_co"}->{"utilisateur"}->{"mail"};
 
@@ -124,7 +127,7 @@ $img_action = $parsed_json ->{"jardin_co"}->{"actions"}->{"img"};
 
 
 
-echo $date_now." ".$luminosite_reglage." ".$temperature_capteur." ".$pompeEau_action;
+echo " L'id de l'utilisateur actuel : ".$user_now."\t Son login : ".$user_login;
 
 
 

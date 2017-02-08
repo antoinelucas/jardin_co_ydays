@@ -10,6 +10,13 @@ $a = array ("jardin_co" => array("utilisateurs" => array('idUtilisateur' => 2,'l
 
 echo "Tableau associatif affiché comme objet: ", json_encode($a, JSON_FORCE_OBJECT), "\n\n";
 
+// -------------------------------------------TEST------------------------------------
+
+$parsed_json = json_decode($a);
+
+include_once 'recup_objet_json.php';
+
+
 
 /*  $contenu_json =json_encode($creation_json);
 
