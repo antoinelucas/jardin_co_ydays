@@ -13,9 +13,16 @@ $b = json_encode($a, JSON_FORCE_OBJECT);
 // -------------------------------------------TEST------------------------------------
 
 $parsed_json = json_decode($b);
+
 var_dump($parsed_json);
 
-include_once 'recup_objet_json.php';
+echo "\n\n";
+
+$user_now = $parsed_json ->{"jardin_co"}->{"utilisateur"}->{"idUtilisateus"};
+$user_login = $parsed_json ->{"jardin_co"}->{"utilisateur"}->{"login"};
+
+echo " L'id de l'utilisateur actuel : ".$user_now."\t Son login : ".$user_login;
+
 
 
 
