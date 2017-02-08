@@ -8,7 +8,7 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
-
+/*
 $a = array ("jardin_co" => array("utilisateurs" => array("idUtilisateur" => "2","login" => "alex" )));
 
 echo "Tableau associatif affiche comme objet: ", json_encode($a, JSON_FORCE_OBJECT), "\n\n";
@@ -16,8 +16,11 @@ $b = utf8_encode(json_encode($a, JSON_FORCE_OBJECT));
 echo "\n\n";
 var_dump($b);
 
+*/
 
-// Définition des erreurs
+$b = '{"jardin_co":{"utilisateurs":{"idUtilisateur":"2","login":"alex"}}}';
+
+/*    // Définition des erreurs
 $constants = get_defined_constants(true);
 $json_errors = array();
 foreach ($constants["json"] as $name => $value) {
@@ -32,12 +35,12 @@ foreach (range(4, 3, -1) as $depth) {
     echo 'Dernière erreur : ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
 }
 
-
+*/
 
 // -------------------------------------------TEST---------------------------------------
 
 $parsed_json = utf8_encode(json_decode($b));
-$parsed_json=preg_replace('array()string()0-9', '$1', $parsed_json);
+
 var_dump($parsed_json);
 
 echo "\n\n";
