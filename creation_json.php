@@ -35,7 +35,7 @@ $json = file_get_contents("http://antoine-lucas.ynov-nantes.net/fichier.json");
 
 // -------------------------------------------TEST---------------------------------------
 
-$parsed_json = json_decode($b);
+$parsed_json = json_decode($json);
 
 var_dump($parsed_json);
 
