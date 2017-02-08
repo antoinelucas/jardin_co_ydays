@@ -12,8 +12,8 @@ header('Content-Type: text/html; charset=utf-8');
 $a = array ("jardin_co" => array("utilisateurs" => array("idUtilisateur" => "2","login" => "alex" )));
 
 echo "Tableau associatif affiche comme objet: ", json_encode($a, JSON_FORCE_OBJECT), "\n\n";
-$b = utf8_encode(json_encode($a, JSON_FORCE_OBJECT));
-echo "\n\n";
+$json_encode = json_encode($a, JSON_FORCE_OBJECT);
+
 
 
 
@@ -24,7 +24,7 @@ $nom_du_fichier = 'fichier.json';
 $fichier = fopen($nom_du_fichier, 'w+');
 
 // Ecriture dans le fichier
-fwrite($fichier, $b);
+fwrite($fichier, $json_encode);
 
 // Fermeture du fichier
 fclose($fichier);
@@ -32,17 +32,3 @@ fclose($fichier);
 
 
 
-$json = file_get_contents("http://antoine-lucas.ynov-nantes.net/fichier.json");
-
-// -------------------------------------------TEST---------------------------------------
-
-$parsed_json = json_decode($json);
-
-var_dump($parsed_json);
-
-echo "\n\n";
-
-$user_now = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"idUtilisateur"};
-$user_login = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"login"};
-
-echo " L'id de l'utilisateur actuel : ".$user_now."\t Son login : ".$user_login;

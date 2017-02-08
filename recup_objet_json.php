@@ -9,7 +9,6 @@
 
 // Ici on va récupérer tout les objets du json dont on va avoir besoin pour l'arduino ou la bdd ensuite.
 
-// exemple   :   $date_jour = $parsed_json ->{'response'}->{'features'}->{'date'};
 
 //--------------------------------------------------------Début-----------------------------------------------------------------
 
@@ -21,8 +20,11 @@ $date_now = $parsed_json ->{"response"}->{"features"}->{"date"};
 
 //--------------------------------------------------------Utilisateur-----------------------------------------------------------------
 
-// permet de savoir quel est l'utilisateur courant
+// permet de savoir quel est l'id de l'utilisateur courant
 $user_now = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"idUtilisateur"};
+
+// permet de savoir quel est le login de l'utilisateur courant
+$user_login = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"login"};
 
 // on récupère le mail si il y a besoin d'envoyer un mail pour le niveau d'eau.
 $user_mail = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"mail"};
@@ -31,16 +33,16 @@ $user_mail = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"mail"};
 //--------------------------------------------------------Connexions-----------------------------------------------------------------
 
 // pour savoir quelle co on utilise
-$id_connexion = $parsed_json ->{"jardin_co"}->{"connexion"}->{"idConnexion"};
+$id_connexion = $parsed_json ->{"jardin_co"}->{"connexions"}->{"idConnexion"};
 
 // avoir le ssid du réseau
-$ssid_co = $parsed_json ->{"jardin_co"}->{"connexion"}->{"ssid"};
+$ssid_co = $parsed_json ->{"jardin_co"}->{"connexions"}->{"ssid"};
 
 // le mdp du reseau
-$password_co = $parsed_json ->{"jardin_co"}->{"connexion"}->{"mdp"};
+$password_co = $parsed_json ->{"jardin_co"}->{"connexions"}->{"mdp"};
 
 // le nom BT
-$bluetooth_co = $parsed_json ->{"jardin_co"}->{"connexion"}->{"bluetooth"};
+$bluetooth_co = $parsed_json ->{"jardin_co"}->{"connexions"}->{"bluetooth"};
 
 
 //--------------------------------------------------------pots--------------------------------------------------------------------
@@ -61,7 +63,7 @@ $id_plante = $parsed_json ->{"jardin_co"}->{"plantes"}->{"idPlante"};
 $name_plante = $parsed_json ->{"jardin_co"}->{"plantes"}->{"nom"};
 
 
-//--------------------------------------------------------reglages------------------------------------------------------------------
+//--------------------------------------------------------reglages---------------------------------------si on ls changes---------------------------
 
 // savoir l'id du réglage en cours donc les réglages conseillé pour un plante type
 $id_reglage = $parsed_json ->{"jardin_co"}->{"reglages"}->{"idReglage"};
@@ -79,7 +81,7 @@ $humiditeSol_reglage = $parsed_json ->{"jardin_co"}->{"reglages"}->{"humiditeSol
 $temperature_reglage = $parsed_json ->{"jardin_co"}->{"reglages"}->{"temperature"};
 
 
-//--------------------------------------------------------capteurs------------------------------------------------------------------
+//--------------------------------------------------------capteurs---------------------------------------pas besoin---------------------------
 
 // récupère l'id capteur ?????
 $id_capteur = $parsed_json ->{"jardin_co"}->{"capteurs"}->{"idCapteur"};
@@ -124,8 +126,8 @@ $img_action = $parsed_json ->{"jardin_co"}->{"actions"}->{"img"};
 
 
 
-echo $user_now." ".$luminosite_reglage;
 
+echo " L'id de l'utilisateur actuel : ".$user_now."\t Son login : ".$user_login."Dans la boite il fait : ".$temperature_capteur."°C";
 
 
 
