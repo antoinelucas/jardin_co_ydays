@@ -22,10 +22,10 @@ $date_now = $parsed_json ->{"response"}->{"features"}->{"date"};
 //--------------------------------------------------------Utilisateur-----------------------------------------------------------------
 
 // permet de savoir quel est l'utilisateur courant
-$user_now = $parsed_json ->{"jardin_co"}->{"utilisateur"}->{"idUtilisateus"};
+$user_now = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"idUtilisateur"};
 
 // on récupère le mail si il y a besoin d'envoyer un mail pour le niveau d'eau.
-$user_mail = $parsed_json ->{"jardin_co"}->{"utilisateur"}->{"mail"};
+$user_mail = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"mail"};
 
 
 //--------------------------------------------------------Connexions-----------------------------------------------------------------
