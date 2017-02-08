@@ -6,7 +6,7 @@
  * Time: 10:07
  */
 
-$a = array ("jardin_co" => array("utilisateurs" => array('idUtilisateur' => '2','login' => "alex" )));
+$a = array ("jardin_co" => array("utilisateurs" => array("idUtilisateur" => "2","login" => "alex" )));
 
 echo "Tableau associatif affiche comme objet: ", json_encode($a, JSON_FORCE_OBJECT), "\n\n";
 $b = json_encode($a, JSON_FORCE_OBJECT);
@@ -14,7 +14,7 @@ echo "\n\n";
 var_dump($b);
 // -------------------------------------------TEST---------------------------------------
 
-$parsed_json = json_decode($b, JSON_FORCE_OBJECT);
+$parsed_json = json_decode($b);
 
 var_dump($parsed_json);
 
