@@ -37,7 +37,7 @@ foreach (range(4, 3, -1) as $depth) {
 // -------------------------------------------TEST---------------------------------------
 
 $parsed_json = utf8_encode(json_decode($b));
-
+$parsed_json=preg_replace('array()string()0-9', '$1', $parsed_json);
 var_dump($parsed_json);
 
 echo "\n\n";
