@@ -31,9 +31,8 @@ fclose($fichier);
 
 
 
-include_once 'testAntoine.php';
 
-        /*      $json = file_get_contents("http://antoine-lucas.ynov-nantes.net/fichier.json");
+$json = file_get_contents("http://antoine-lucas.ynov-nantes.net/fichier.json");
 
 // -------------------------------------------TEST---------------------------------------
 
@@ -43,7 +42,7 @@ var_dump($parsed_json);
 
 echo "\n\n";
 
-$user_now = $parsed_json ->{"jardin_co"}->{"utilisateur"}->{"idUtilisateus"};
-$user_login = $parsed_json ->{"jardin_co"}->{"utilisateur"}->{"login"};
+$user_now = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"idUtilisateur"};
+$user_login = $parsed_json ->{"jardin_co"}->{"utilisateurs"}->{"login"};
 
 echo " L'id de l'utilisateur actuel : ".$user_now."\t Son login : ".$user_login;
