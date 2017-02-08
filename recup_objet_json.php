@@ -124,7 +124,7 @@ $img_action = $parsed_json ->{"jardin_co"}->{"actions"}->{"img"};
 
 
 
-echo $date_now." ".$luminosite_reglage." ".$temperature_capteur;
+echo $date_now." ".$luminosite_reglage." ".$temperature_capteur." ".$pompeEau_action;
 
 
 
