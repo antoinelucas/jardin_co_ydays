@@ -1,0 +1,59 @@
+{
+  "response": {
+    "features": {
+      "date": "02/02/2017"
+    }
+  },
+  "jardin_co": {
+    "utilisateurs": {
+      "idUtilisateur": 2,
+      "login": "alex",
+      "mdp": "test",
+      "mail": "alex@test.fr",
+      "telephone": "0667023033"
+    },
+    "connexions": {
+      "idConnexion": 1,
+      "ssid": "freebox_8544px",
+      "mdp": "ABD4-VEGV5-VREHD8-HRTHT7-864HRGGT",
+      "bluetooth": "pot_salon1"
+    },
+    "pots": {
+      "idPot": 1,
+      "idConnexion": 1,
+      "idCapteur": 1,
+      "idPlante": 1,
+      "idAction": 1,
+      "idReglage": 2,
+      "nom": "pot_salon"
+    },
+    "plantes": {
+      "idPlante": 1,
+      "idReglage": 2,
+      "nom": "tomates"
+    },
+    "reglages": {
+      "idReglage": 2,
+      "luminosite": "32.5",
+      "humiditeAir": "42.8",
+      "humiditeSol": "85.12",
+      "temperature": "25.4"
+    },
+    "capteurs": {
+      "idCapteur": 1,
+      "luminosite": "35.4",
+      "humiditeAir": "52.7",
+      "humiditeSol": "75.4",
+      "niveauEau": "5",
+      "temperature": "19.8"
+    },
+    "actions": {
+      "idAction": 1,
+      "pompeEau": true,
+      "ventilateur1": true,
+      "ventilateur2": false,
+      "led": true,
+      "img": "dossier_img_pot/pot1/..."
+    }
+  }
+}
