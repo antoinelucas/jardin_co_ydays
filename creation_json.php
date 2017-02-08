@@ -12,7 +12,7 @@ echo "Tableau associatif affiche comme objet: ", json_encode($a), "\n\n";
 $b = json_encode($a, JSON_FORCE_OBJECT);
 echo "\n\n";
 var_dump($b);
-// -------------------------------------------TEST--------------------------------------
+// -------------------------------------------TEST---------------------------------------
 
 $parsed_json = json_decode($b);
 
