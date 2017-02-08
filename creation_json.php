@@ -12,6 +12,25 @@ echo "Tableau associatif affiche comme objet: ", json_encode($a, JSON_FORCE_OBJE
 $b = json_encode($a, JSON_FORCE_OBJECT);
 echo "\n\n";
 var_dump($b);
+
+
+// Définition des erreurs
+$constants = get_defined_constants(true);
+$json_errors = array();
+foreach ($constants["json"] as $name => $value) {
+    if (!strncmp($name, "JSON_ERROR_", 11)) {
+        $json_errors[$value] = $name;
+    }
+}
+
+// Affichage des erreurs pour les différentes profondeurs.
+foreach (range(4, 3, -1) as $depth) {
+    var_dump(json_decode($b, true, $depth));
+    echo 'Dernière erreur : ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
+}
+
+
+
 // -------------------------------------------TEST---------------------------------------
 
 $parsed_json = json_decode($b);
