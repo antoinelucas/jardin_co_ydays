@@ -13,7 +13,8 @@ $json = file_get_contents("http://antoine-lucas.ynov-nantes.net/exemple_json_jar
  // présente notre fichier json sous la forme d'objets (chaque objet peut lui même contenir un objet ou un tableau par exemple)
 
 $parsed_json = json_decode($json);
-var_dump($parsed_json);
+
+//var_dump($parsed_json);
 
 
 include_once 'recup_objet_json.php';
