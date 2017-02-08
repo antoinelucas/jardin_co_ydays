@@ -57,3 +57,12 @@
     }
   }
 }
+
+this.insert(    "actions": {
+"idAction": 1,
+"pompeEau": true,
+"ventilateur1": true,
+"ventilateur2": false,
+"led": true,
+"img": "dossier_img_pot/pot1/..."
+})
