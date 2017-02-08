@@ -31,7 +31,7 @@ fwrite($fichier, $b);
 // Fermeture du fichier
 fclose($fichier);
 
-$json = file_get_contents("http://antoine-lucas.ynov-nantes.net/fichier");
+$json = file_get_contents("http://antoine-lucas.ynov-nantes.net/fichier.json");
 
 // -------------------------------------------TEST---------------------------------------
 
