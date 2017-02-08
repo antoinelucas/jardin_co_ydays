@@ -12,7 +12,7 @@ header('Content-Type: text/html; charset=utf-8');
 $a = array ("jardin_co" => array("utilisateurs" => array("idUtilisateur" => "2","login" => "alex" )));
 
 echo "Tableau associatif affiche comme objet: ", json_encode($a, JSON_FORCE_OBJECT), "\n\n";
-$b = json_encode($a, JSON_FORCE_OBJECT);
+$b = utf8_encode(json_encode($a, JSON_FORCE_OBJECT));
 echo "\n\n";
 var_dump($b);
 
@@ -36,7 +36,7 @@ foreach (range(4, 3, -1) as $depth) {
 
 // -------------------------------------------TEST---------------------------------------
 
-$parsed_json = json_decode($b);
+$parsed_json = utf8_encode(json_decode($b));
 
 var_dump($parsed_json);
 
